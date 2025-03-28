@@ -1,5 +1,6 @@
 ﻿using Sorting.manager;
 using Sorting.print;
+using Sorting.sorting.specials;
 
 public class Program
 {
@@ -19,7 +20,13 @@ public class Program
 
         // Crie um menu que solicite ao usuário qual é o arquivo que será lido e qual algoritmo deverá ser executado
 
+        /*Segure ctrl em cima do ordenar para ir direto para a pagina de ordenação e adicionar o CoutingSort para comçar a ser chamado*/
+        int[] arr = ManagerFileReader.Arquivo100TXT();
 
+        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.BUBBLESORT);
 
+        ManagerFileSorting.Ordenar(Sorting.enums.Sortings.BUBBLESORT, vet);
+
+        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.BUBBLESORT);
     }
 }
