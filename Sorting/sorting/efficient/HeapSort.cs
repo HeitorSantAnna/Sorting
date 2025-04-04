@@ -2,5 +2,10 @@
 {
     class HeapSort
     {
+        public int[] Sortings(int[] ver)
+        {
+            return ver;
+        }
+
     }
 }
