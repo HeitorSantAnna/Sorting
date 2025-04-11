@@ -69,11 +69,19 @@ public class Program
 
         //SHELLSORT
 
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.SHELLSORT);
+        /*PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.SHELLSORT);
 
         ManagerFileSorting.Ordenar(Sorting.enums.Sortings.SHELLSORT, vet);
 
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.SHELLSORT);
+        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.SHELLSORT);*/
+
+        //QuickSORT
+
+        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.QUICKSORT);
+
+        ManagerFileSorting.Ordenar(Sorting.enums.Sortings.QUICKSORT, vet);
+
+        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.QUICKSORT);
 
     }
 }

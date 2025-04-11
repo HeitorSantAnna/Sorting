@@ -38,12 +38,14 @@ namespace Sorting.manager
                     break;
 
                 case Sortings.QUICKSORT:
+                    ordenado = QuickSort.Sorting(vet, 0, vet.Length-1);
                     break;
 
                 case Sortings.MERGESORT:
                     break;
 
                 case Sortings.HEAPSORT:
+                    ordenado = HeapSort.Sorting(vet, vet.Length - 1);
                     break;
             }
         }
