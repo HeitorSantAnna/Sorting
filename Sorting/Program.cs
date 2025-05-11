@@ -77,11 +77,29 @@ public class Program
 
         //QuickSORT
 
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.QUICKSORT);
+        /*PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.QUICKSORT);
 
         ManagerFileSorting.Ordenar(Sorting.enums.Sortings.QUICKSORT, vet);
 
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.QUICKSORT);
+        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.QUICKSORT);*/
+
+        //Merge
+
+        /*PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.MERGESORT);
+
+        ManagerFileSorting.Ordenar(Sorting.enums.Sortings.MERGESORT, vet);
+
+        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.MERGESORT);*/
+
+        //Radix
+        //Tem erro
+        /*PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.RADIXSORT);
+
+        ManagerFileSorting.Ordenar(Sorting.enums.Sortings.RADIXSORT, vet);
+
+        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.RADIXSORT);*/
+
+        //BucketSort, sei lá o que é isso
 
     }
 }

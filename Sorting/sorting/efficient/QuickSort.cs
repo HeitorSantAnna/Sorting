@@ -22,7 +22,7 @@
                 Sorting(vet, esq, j);
             if (i < dir)
                 Sorting(vet, i, dir);
-
+            
             return vet;
         }
 
