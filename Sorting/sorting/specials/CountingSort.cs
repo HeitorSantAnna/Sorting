@@ -1,26 +1,61 @@
-﻿namespace Sorting.sorting.specials
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Diagnostics.Metrics;
+using System.Xml.Linq;
+
+namespace Sorting.sorting.specials
 {
     class CountingSort
     {
-        public int[] Sorting(int[] arr, int max)
+        public static int[] Sorting(int[] array, int n)
         {
-            int[] count = new int[max + 1];
-            int[] output = new int[arr.Length];
+            //Array para contar o numero de ocorrencias de cada elemento
+            int[] count = new int[getMaior(array) + 1];
+            int[] ordenado = new int[n];
 
-            foreach(var num in arr)
+            //Inicializar cada posicao do array de contagem
+            for (int i = 0; i < count.Length; count[i] = 0, i++) ;
+
+            //Agora, o count[i] contem o numero de elemento iguais a i
+            for (int i = 0; i < n; count[array[i]]++, i++) ;
+
+            /*Console.WriteLine("Agora, o count[i] contem o numero de elemento iguais a i");
+            for (int i = 0; i < count.Length; i++)
             {
-                count[num]++;
+                Console.Write($"{count[i]}, ");
+            }
+            Console.WriteLine();*/
+
+            //Agora, o count[i] contem o numero de elemento menores ou iguais a i
+            for (int i = 1; i < count.Length; count[i] += count[i - 1], i++) ;
+            /*Console.WriteLine("Agora, o count[i] contem o numero de elemento menores ou iguais a i");
+            for (int i = 0; i < count.Length; i++)
+            {
+                Console.Write($"{count[i]}, ");
+            }*/
+
+            //Ordenando
+            for (int i = n - 1; i >= 0; ordenado[count[array[i]] - 1] = array[i], count[array[i]]--, i--) ;
+
+            /*for(int i = 0; i < n; i++)
+            {
+                Console.Write($"{ordenado[i]}, ");
+            }
+            Console.WriteLine();*/
+            return ordenado;
+        }
+
+        static int getMaior(int[] array)
+        {
+            int maior = 0;
+            for(int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > maior)
+                {
+                    maior = array[i];
+                }
             }
 
-            for (int i = 1; i <= max; i++) count[i] += count[i - 1];
-
-            for(int i = arr.Length - 1; i >= 0; i--)
-            {
-                output[count[arr[i]] - 1] = arr[i];
-                count[arr[i]]--;
-            }
-
-            return arr;
+            return maior;
         }
     }
 }

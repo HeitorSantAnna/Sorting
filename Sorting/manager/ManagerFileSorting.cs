@@ -1,4 +1,5 @@
 ﻿using Sorting.enums;
+using Sorting.print;
 using Sorting.sorting.efficient;
 using Sorting.sorting.simple;
 using Sorting.sorting.specials;
@@ -26,9 +27,13 @@ namespace Sorting.manager
                     break;
 
                 case Sortings.BUCKETSORT:
+                    
                     break;
 
                 case Sortings.COUNTINGSORT:
+                    ordenado = CountingSort.Sorting(vet, vet.Length);
+                    PrintSolutionStatic.ImprimirArrayMesmaLinha(ordenado, Sorting.enums.Sortings.COUNTINGSORT);
+
                     break;
 
                 case Sortings.RADIXSORT:
@@ -36,7 +41,7 @@ namespace Sorting.manager
                     break;
 
                 case Sortings.SHELLSORT:
-                    ordenado = ShellSort.Sorting(vet);
+                    ordenado = ShellSort.shellsort(vet, vet.Length);
                     break;
 
                 case Sortings.QUICKSORT:
