@@ -1,11 +1,14 @@
-﻿namespace Sorting.sorting.efficient
+﻿using System.Diagnostics;
+
+namespace Sorting.sorting.efficient
 {
     class QuickSort
     {
 
         public static int[] Sorting(int[] vet, int esq, int dir)
         {
-            int i = esq, j = dir, pivo = vet[(esq + dir) / 2];
+
+            int i = esq, j = dir, /*pivo = esq*/ pivo = vet[(esq + dir) / 2];
             while (i <= j)
             {
                 while (vet[i] < pivo)
@@ -22,7 +25,7 @@
                 Sorting(vet, esq, j);
             if (i < dir)
                 Sorting(vet, i, dir);
-            
+
             return vet;
         }
 

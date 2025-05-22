@@ -1,0 +1,12 @@
+Questão 5
+a)Com essa modificação, ao aplicar o primeiro particionamento no vetor original, o processo reorganiza os elementos de forma que todos os menores que o pivô fiquem à esquerda e os maiores à direita.
+
+Após o particionamento, o vetor fica assim:
+
+{1, 7, 2, 8, 6, 4, 3, 5, 9, 10}
+
+b) O número de chamadas recursivas é 9 (n - 1, sendo n o tamanho do vetor, 10 -1 = 9).
+
+c) O(n^2). O pior caso do QuickSort ocorre quando o pivô escolhido divide o vetor de forma extremamente desbalanceada, como quando o vetor já está ordenado (crescente ou decrescente) e o pivô é sempre o menor ou maior elemento.
+
+Questão 6

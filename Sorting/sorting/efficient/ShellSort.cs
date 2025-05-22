@@ -1,4 +1,5 @@
 ﻿using Sorting.print;
+using System.Diagnostics;
 
 namespace Sorting.sorting.efficient
 {
@@ -40,6 +41,9 @@ namespace Sorting.sorting.efficient
 
         public static int[] shellsort(int[] array, int n)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             int h = 1;
             do { h = (h * 3) + 1; } while (h < n);
             do
@@ -52,6 +56,13 @@ namespace Sorting.sorting.efficient
             } while (h != 1);
 
             insercao(array, n);
+
+            stopwatch.Stop();
+
+            Console.WriteLine($"Tempo de execução: {stopwatch}");
+
+            //TimeSpan timeSpan = stopwatch.Elapsed;
+            //Console.WriteLine($"Tempo de execução: {timeSpan.TotalSeconds} segundos");
 
             return array;
         }

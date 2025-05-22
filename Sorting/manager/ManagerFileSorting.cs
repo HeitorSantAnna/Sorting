@@ -3,6 +3,7 @@ using Sorting.print;
 using Sorting.sorting.efficient;
 using Sorting.sorting.simple;
 using Sorting.sorting.specials;
+using System.Diagnostics;
 
 namespace Sorting.manager
 {

@@ -1,9 +1,14 @@
-﻿namespace Sorting.sorting.simple
+﻿using System.Diagnostics;
+
+namespace Sorting.sorting.simple
 {
     class InsertionSort
     {
         public static int[] Sorting(int[] vet)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             int j, x;
             int n = vet.Length;
             for (int i = 1; i < n; i++)
@@ -17,6 +22,11 @@
                 }
                 vet[j + 1] = x;
             }
+
+            stopwatch.Stop();
+
+            Console.WriteLine($"Tempo de execução: {stopwatch}");
+
             return vet;
         }
     }

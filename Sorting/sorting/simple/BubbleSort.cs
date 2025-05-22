@@ -1,9 +1,14 @@
-﻿namespace Sorting.sorting.simple
+﻿using System.Diagnostics;
+
+namespace Sorting.sorting.simple
 {
     class BubbleSort
     {
         public static int[] Sorting(int[] vet)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             int n = vet.Length;
 
             for (int i = 0; i < n; i++)
@@ -18,6 +23,10 @@
                     }
                 }
             }
+
+            stopwatch.Stop();
+
+            Console.WriteLine($"Tempo de execução: {stopwatch}");
 
             return vet;
         }

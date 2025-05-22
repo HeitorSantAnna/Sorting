@@ -1,6 +1,7 @@
 ﻿using Sorting.manager;
 using Sorting.print;
 using Sorting.sorting.specials;
+using System.Diagnostics;
 
 public class Program
 {
@@ -9,8 +10,9 @@ public class Program
         // https://github.com/accj1990/Sorting.git
         // https://pt.overleaf.com/read/kptbxrwtrzch#8b9776
 
-        int escolha;
-        int[] vet = ManagerFileReader.Arquivo10TXT();
+        //int escolha;
+        int[] vet = ManagerFileReader.Arquivo10000TXT();
+        //int[] vet = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
         /*Console.WriteLine("Qual tamanho do arquivo que você quer ler:\n 1.10\n 2.100\n 3.1000\n 4.10000\n 5.100000\n 6.1000000");
         escolha = int.Parse(Console.ReadLine());
@@ -33,8 +35,8 @@ public class Program
        ManagerFileSorting.Ordenar(Sorting.enums.Sortings.BUBBLESORT, vet);
 
        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.BUBBLESORT);
-
         */
+        
        // Crie um menu que solicite ao usuário qual é o arquivo que será lido e qual algoritmo deverá ser executado
 
        //Segure ctrl em cima do ordenar para ir direto para a pagina de ordenação e adicionar o SELECTIONSORT para comçar a ser chamado
@@ -57,15 +59,15 @@ public class Program
 
        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.INSERTIONSORT);
        */
-       //COUNTINGSORT
-       //Está funcionando
-       
-       /*PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.COUNTINGSORT);
+        //COUNTINGSORT
+        //Está funcionando
 
-       ManagerFileSorting.Ordenar(Sorting.enums.Sortings.COUNTINGSORT, vet);
+        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.COUNTINGSORT);
+
+        ManagerFileSorting.Ordenar(Sorting.enums.Sortings.COUNTINGSORT, vet);
 
 
-       //Pesquisar qual é o atributo no código utils/UtilCountingTime.cs que vai falar qual é o tempo de execução do código*/
+        //Pesquisar qual é o atributo no código utils/UtilCountingTime.cs que vai falar qual é o tempo de execução do código*/
 
         //Fazer os códigos a partir da pagina 89 do segundo link do topo
 
@@ -76,24 +78,26 @@ public class Program
 
         ManagerFileSorting.Ordenar(Sorting.enums.Sortings.SHELLSORT, vet);
 
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.SHELLSORT);*/
-
+        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.SHELLSORT);
+        */
         //QuickSORT
         //Está certo
-        /*PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.QUICKSORT);
+        /*
+        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.QUICKSORT);
 
         ManagerFileSorting.Ordenar(Sorting.enums.Sortings.QUICKSORT, vet);
 
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.QUICKSORT);*/
-
+        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.QUICKSORT);
+        */
         //Merge
         //Está certo
-        /*PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.MERGESORT);
+        /*
+        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.MERGESORT);
 
         ManagerFileSorting.Ordenar(Sorting.enums.Sortings.MERGESORT, vet);
 
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.MERGESORT);*/
-
+        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.MERGESORT);
+        */
         //Radix não precisa fazer
 
         //Na primeira questão do slide é para considerar o tempo de execução

@@ -22,7 +22,7 @@ namespace Sorting.print
         public static void ImprimirArrayQuebraLinha(int[] array)
         {
             Console.WriteLine("INICIO - Imprimindo estrutura em alocação estática com quebra de linha. \n");
-
+            
             for (int i = 0; i < array.Length; i++)
             {
                 Console.Write(array[i] + " ");

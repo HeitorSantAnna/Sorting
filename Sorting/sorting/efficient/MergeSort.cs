@@ -6,6 +6,9 @@ namespace Sorting.sorting.efficient
     {
         public static int[] Sorting(int[] array, int esq, int dir)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             if (esq < dir)
             {
                 int meio = (esq + dir) / 2;
@@ -13,6 +16,10 @@ namespace Sorting.sorting.efficient
                 Sorting(array, meio + 1, dir);
                 intercalar(array, esq, meio, dir);
             }
+
+            stopwatch.Stop();
+
+            Console.WriteLine($"Tempo de execução: {stopwatch}");
 
             return array;
         }

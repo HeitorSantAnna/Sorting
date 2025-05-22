@@ -1,6 +1,7 @@
 ﻿using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Diagnostics.Metrics;
 using System.Xml.Linq;
+using System.Diagnostics;
 
 namespace Sorting.sorting.specials
 {
@@ -8,6 +9,8 @@ namespace Sorting.sorting.specials
     {
         public static int[] Sorting(int[] array, int n)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             //Array para contar o numero de ocorrencias de cada elemento
             int[] count = new int[getMaior(array) + 1];
             int[] ordenado = new int[n];
@@ -41,6 +44,9 @@ namespace Sorting.sorting.specials
                 Console.Write($"{ordenado[i]}, ");
             }
             Console.WriteLine();*/
+            stopwatch.Stop();
+
+            Console.WriteLine($"Tempo de execução: {stopwatch}");
             return ordenado;
         }
 
