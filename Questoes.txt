@@ -9,4 +9,5 @@ b) O número de chamadas recursivas é 9 (n - 1, sendo n o tamanho do vetor, 10 
 
 c) O(n^2). O pior caso do QuickSort ocorre quando o pivô escolhido divide o vetor de forma extremamente desbalanceada, como quando o vetor já está ordenado (crescente ou decrescente) e o pivô é sempre o menor ou maior elemento.
 
-Questão 6
+Questão 8
+O tamanho da estrutura tem que ser definido antes, desperdício de memória, se precisar verificar um elemento no meio da verificação vai ter que percorrer o vetor inteiro e depois voltar ao início.

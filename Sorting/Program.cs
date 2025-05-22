@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 public class Program
 {
-    public static void Main(string[] args)
+    /*public static void Main(string[] args)
     {
         // https://github.com/accj1990/Sorting.git
         // https://pt.overleaf.com/read/kptbxrwtrzch#8b9776
@@ -61,11 +61,11 @@ public class Program
        */
         //COUNTINGSORT
         //Está funcionando
-
+        /*
         PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.COUNTINGSORT);
 
         ManagerFileSorting.Ordenar(Sorting.enums.Sortings.COUNTINGSORT, vet);
-
+        */
 
         //Pesquisar qual é o atributo no código utils/UtilCountingTime.cs que vai falar qual é o tempo de execução do código*/
 
@@ -97,9 +97,10 @@ public class Program
         ManagerFileSorting.Ordenar(Sorting.enums.Sortings.MERGESORT, vet);
 
         PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.MERGESORT);
-        */
+        
         //Radix não precisa fazer
 
         //Na primeira questão do slide é para considerar o tempo de execução
-    }
+        
+    }*/
 }

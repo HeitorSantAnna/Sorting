@@ -6,9 +6,6 @@ namespace Sorting.sorting.simple
     {
         public static int[] Sorting(int[] vet)
         {
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-
             int n = vet.Length;
 
             for (int i = 0; i < n; i++)
@@ -23,10 +20,6 @@ namespace Sorting.sorting.simple
                     }
                 }
             }
-
-            stopwatch.Stop();
-
-            Console.WriteLine($"Tempo de execução: {stopwatch}");
 
             return vet;
         }
