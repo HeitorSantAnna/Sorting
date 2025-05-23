@@ -1,6 +1,6 @@
 ﻿namespace Sorting.basic_class
 {
-    public class Program
+    /*public class Program
     {
         public static void Main(string[] args)
         {
@@ -14,7 +14,7 @@
 
             item.Mostrar();
         }
-    }
+    }*/
 
     public class Lista
     {
