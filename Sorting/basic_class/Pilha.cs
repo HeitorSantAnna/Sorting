@@ -4,9 +4,9 @@ using Sorting.reader;
 
 namespace Sorting.basic_class
 {
-    /*public class Program
+    public class Program
     {
-        public static void Main(string[] args)
+        /*public static void Main(string[] args)
         {
             Pilha<string> pilha = new Pilha<string>();
 
@@ -22,8 +22,8 @@ namespace Sorting.basic_class
             }
 
             pilha.Mostrar();
-        }
-    }*/
+        }*/
+    }
 
     public class Pilha<T>
     {
