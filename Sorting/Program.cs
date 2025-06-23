@@ -101,6 +101,162 @@ public class Program
         //Radix não precisa fazer
 
         //Na primeira questão do slide é para considerar o tempo de execução
-        
+    }
+
+    public class Nodo<T> where T : IComparable<T>
+    {
+        public T valor;
+        public Nodo<T> esq;
+        public Nodo<T> dir;
+
+        public Nodo(T valor)
+        {
+            this.valor = valor;
+        }
+    }
+
+    public class ArvoreBinaria<T> where T: IComparable<T>
+    {
+        public Nodo<T> raiz;
+
+        public ArvoreBinaria()
+        {
+            this.raiz = null;
+        }
+
+        public void Inserir(T valor)
+        {
+            raiz = Inserir(valor, raiz);
+        }
+
+        public Nodo<T> Inserir(T valor, Nodo<T> n)
+        {
+            if(n == null)
+            {
+                n = new Nodo<T>(valor);
+            }
+            else
+            {
+                if(valor.CompareTo(n.valor) < 0)
+                {
+                    n.esq = Inserir(valor, n.esq);
+                }
+                else if(valor.CompareTo(n.valor) > 0)
+                {
+                    n.dir = Inserir(valor, n.dir);
+                }
+                else
+                {
+                    throw new Exception($"Error: Não é possível inserir elementos repetidos.");
+                }
+            }
+
+            return n;
+        }
+
+        public void Mostrar()
+        {
+            Console.WriteLine("[");
+            Mostrar(raiz);
+            Console.WriteLine("]");
+        }
+
+        private void Mostrar(Nodo<T> n)
+        {
+            if(n != null)
+            {
+                Mostrar(n.esq);
+                Console.WriteLine($"{n.valor}, ");
+                Mostrar(n.dir);
+            }
+        }
+
+        public bool Pesquisar(T valor)
+        {
+            return (Pesquisar(valor, raiz));
+        }
+
+        private bool Pesquisar(T valor, Nodo<T> n)
+        {
+            if(n == null)
+            {
+                return false;
+            }
+            else
+            {
+                if(valor.CompareTo(n.valor) < 0)
+                {
+                    return Pesquisar(valor, n.esq);
+                }
+                else if(valor.CompareTo(n.valor) > 0)
+                {
+                    return Pesquisar(valor, n.dir);
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
+
+        public void Remover(T valor)
+        {
+            raiz = Remover(valor, raiz);
+        }
+
+        private Nodo<T> Remover(T valor, Nodo<T> n)
+        {
+            if(n == null)
+            {
+                throw new Exception($"ERRO: Elemento {valor} não existe na árvore");
+            }
+            else
+            {
+                if(valor.CompareTo(n.valor) < 0)
+                {
+                    n.esq = Remover(valor, n.esq);
+                }
+                else if(valor.CompareTo(n.valor) > 0)
+                {
+                    n.dir = Remover(valor, n.dir);
+                }
+                else
+                {
+                    if(n.esq == null && n.dir == null)
+                    {
+                        return null;
+                    }
+                    else if(n.esq != null && n.dir == null)
+                    {
+                        return n.esq;
+                    }
+                    else if(n.esq == null && n.dir != null)
+                    {
+                        return n.dir;
+                    }
+                    else
+                    {
+                        n.dir = SubstituiMenorDireita(n, n.dir);
+                    }
+                }
+            }
+
+            return n;
+        }
+
+        private Nodo<T> SubstituiMenorDireita(Nodo<T> n, Nodo<T> aux)
+        {
+            if(aux.esq != null)
+            {
+                aux.esq = SubstituiMenorDireita(n, aux.esq);
+            }
+            else
+            {
+                n.valor = aux.valor;
+                return aux.dir;
+            }
+
+            return aux;
+        }
     }
 }
