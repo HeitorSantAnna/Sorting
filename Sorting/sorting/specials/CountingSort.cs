@@ -9,17 +9,16 @@ namespace Sorting.sorting.specials
     {
         public static int[] Sorting(int[] array, int n)
         {
-            int quant = 0;
 
             //Array para contar o numero de ocorrencias de cada elemento
-            int[] count = new int[getMaior(array, quant) + 1];
+            int[] count = new int[getMaior(array) + 1];
             int[] ordenado = new int[n];
 
             //Inicializar cada posicao do array de contagem
-            for (int i = 0; i < count.Length; count[i] = 0, i++, quant++) ;
+            for (int i = 0; i < count.Length; count[i] = 0, i++) ;
 
             //Agora, o count[i] contem o numero de elemento iguais a i
-            for (int i = 0; i < n; count[array[i]]++, i++, quant++) ;
+            for (int i = 0; i < n; count[array[i]]++, i++) ;
 
             /*Console.WriteLine("Agora, o count[i] contem o numero de elemento iguais a i");
             for (int i = 0; i < count.Length; i++)
@@ -29,7 +28,7 @@ namespace Sorting.sorting.specials
             Console.WriteLine();*/
 
             //Agora, o count[i] contem o numero de elemento menores ou iguais a i
-            for (int i = 1; i < count.Length; count[i] += count[i - 1], i++, quant++) ;
+            for (int i = 1; i < count.Length; count[i] += count[i - 1], i++) ;
             /*Console.WriteLine("Agora, o count[i] contem o numero de elemento menores ou iguais a i");
             for (int i = 0; i < count.Length; i++)
             {
@@ -37,7 +36,7 @@ namespace Sorting.sorting.specials
             }*/
 
             //Ordenando
-            for (int i = n - 1; i >= 0; ordenado[count[array[i]] - 1] = array[i], count[array[i]]--, i--, quant++) ;
+            for (int i = n - 1; i >= 0; ordenado[count[array[i]] - 1] = array[i], count[array[i]]--, i--) ;
 
             /*for(int i = 0; i < n; i++)
             {
@@ -45,11 +44,10 @@ namespace Sorting.sorting.specials
             }
             Console.WriteLine();*/
 
-            Console.WriteLine($"Comaparação: {quant}");
             return ordenado;
         }
 
-        static int getMaior(int[] array, int quant)
+        static int getMaior(int[] array)
         {
             int maior = 0;
             for(int i = 0; i < array.Length; i++)
@@ -57,7 +55,6 @@ namespace Sorting.sorting.specials
                 if (array[i] > maior)
                 {
                     maior = array[i];
-                    quant++;
                 }
             }
 

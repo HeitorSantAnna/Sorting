@@ -8,7 +8,7 @@ namespace Sorting.sorting.efficient
         public static int[] Sorting(int[] vet, int esq, int dir)
         {
 
-            int i = esq, j = dir, pivo = vet[(esq + dir) / 2], quantidade = 0, x = 0;
+            int i = esq, j = dir, pivo = vet[(esq + dir) / 2], x = 0;
             while (i <= j)
             {
                 while (vet[i] < pivo)
@@ -22,10 +22,9 @@ namespace Sorting.sorting.efficient
                 }
 
                 if (i <= j)
-                { swap(vet, i, j, ref quantidade);
+                { swap(vet, i, j);
                     i++;
                     j--;
-                    quantidade++;
                 }
             }
             if (esq < j)
@@ -38,22 +37,15 @@ namespace Sorting.sorting.efficient
                 Sorting(vet, i, dir);
             }
 
-            if (x < 1)
-            {
-                Console.WriteLine($"Comparações: {quantidade}");
-                x++;
-            }
-
             return vet;
         }
 
-        static void swap(int[] vet, int i, int j, ref int quant)
+        static void swap(int[] vet, int i, int j)
         {
             int aux;
             aux = vet[i];
             vet[i] = vet[j];
             vet[j] = aux;
-            quant++;
         }
     }
 }

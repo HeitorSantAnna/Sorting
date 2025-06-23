@@ -42,42 +42,36 @@ namespace Sorting.sorting.efficient
         public static int[] shellsort(int[] array, int n)
         {
 
-            int h = 1, quantidade = 0;
+            int h = 1;
             do { h = (h * 3) + 1; } while (h < n);
             do
             {
                 h /= 3;
                 for (int cor = 0; cor < h; cor++)
                 {
-                    insercaoPorCor(array, n, cor, h, ref quantidade);
+                    insercaoPorCor(array, n, cor, h);
                 }
             } while (h != 1);
 
-            insercao(array, n, ref quantidade);
-
-            Console.WriteLine($"Comparações: {quantidade}");
+            insercao(array, n);
 
             return array;
         }
-        static int insercaoPorCor(int[] array, int n, int cor, int h, ref int quant)
+        static void insercaoPorCor(int[] array, int n, int cor, int h)
         {
             for (int i = (h + cor); i < n; i += h)
             {
                 int tmp = array[i];
                 int j = i - h;
-                quant++;
                 while ((j >= 0) && (array[j] > tmp))
                 {
                     array[j + h] = array[j];
                     j -= h;
-                    quant++;
                 }
                 array[j + h] = tmp;
-                quant++;
             }
-            return quant;
         }
-        static int insercao(int[] array, int n, ref int quant)
+        static void insercao(int[] array, int n)
         {
             for (int i = 1; i < n; i += 1)
             {
@@ -87,11 +81,9 @@ namespace Sorting.sorting.efficient
                 {
                     array[j + 1] = array[j];
                     j -= 1;
-                    quant++;
                 }
                 array[j + 1] = tmp;
             }
-            return quant;
         }
 
     }

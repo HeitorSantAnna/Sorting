@@ -1,7 +1,9 @@
-﻿using Sorting.manager;
+﻿using Sorting.basic_class;
+using Sorting.manager;
 using Sorting.print;
 using Sorting.sorting.specials;
 using System.Diagnostics;
+using System.Net.Http.Headers;
 
 public class Program
 {
@@ -10,97 +12,196 @@ public class Program
         // https://github.com/accj1990/Sorting.git
         // https://pt.overleaf.com/read/kptbxrwtrzch#8b9776
 
-        //int escolha;
-        int[] vet = ManagerFileReader.Arquivo10000TXT();
-        //int[] vet = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        Pilha<string> pilha = new Pilha<string>();
+        Lista item = new Lista();
+        Fila<string> fila = new Fila<string>();
 
-        /*Console.WriteLine("Qual tamanho do arquivo que você quer ler:\n 1.10\n 2.100\n 3.1000\n 4.10000\n 5.100000\n 6.1000000");
+        int escolha;
+        int[] vetor;
+        string[] vector = ManagerFileReader.Arquivos10TXT();
+        int[] vet = ManagerFileReader.Arquivo10000TXT();
+        ArvoreBinaria<int> arvoreBinaria = new ArvoreBinaria<int>();
+        TabelaHash<string> tabelaHash = new TabelaHash<string>(vector.Length); ;
+
+        Console.WriteLine("Qual tamanho do arquivo que você quer ler:\n 1.10\n 2.100\n 3.1000\n 4.10000\n 5.100000\n 6.1000000");
         escolha = int.Parse(Console.ReadLine());
 
-        /*switch(escolha)
+        switch (escolha)
         {
-            case 1: vet = ManagerFileReader.Arquivo10TXT(); break;
-            case 2: vet = ManagerFileReader.Arquivo100TXT(); break;
-            case 3: vet = ManagerFileReader.Arquivo1000TXT(); break;
-            case 4: vet = ManagerFileReader.Arquivo10000TXT(); break;
-            case 5: vet = ManagerFileReader.Arquivo100000TXT(); break;
-            case 6: vet = ManagerFileReader.Arquivo1000000TXT(); break;
-        }*/
+            case 1: vet = ManagerFileReader.Arquivo10TXT(); vetor = ManagerFileReader.Arquivo10TXT(); vector = ManagerFileReader.Arquivos10TXT(); tabelaHash = new TabelaHash<string>(vector.Length); foreach (int valor in vetor)
+                {
+                    arvoreBinaria.Inserir(valor);
+                }
+                foreach(string valor in vector)
+                {
+                    tabelaHash.Inserir(valor);
+                    pilha.II(valor);
+                    item.Inserir(valor);
+                    fila.II(valor);
+                }
+                break;
+            case 2: vet = ManagerFileReader.Arquivo100TXT(); vetor = ManagerFileReader.Arquivo100TXT();  vector = ManagerFileReader.Arquivos100TXT(); tabelaHash = new TabelaHash<string>(vector.Length); foreach (int valor in vetor)
+                {
+                    arvoreBinaria.Inserir(valor);
+                }
+                foreach (string valor in vector)
+                {
+                    tabelaHash.Inserir(valor);
+                    pilha.II(valor);
+                    item.Inserir(valor);
+                    fila.II(valor);
+                }
+                break;
+            case 3: vet = ManagerFileReader.Arquivo1000TXT(); vetor = ManagerFileReader.Arquivo1000TXT(); vector = ManagerFileReader.Arquivos1000TXT(); tabelaHash = new TabelaHash<string>(vector.Length); foreach (int valor in vetor)
+                {
+                    arvoreBinaria.Inserir(valor);
+                }
+                foreach (string valor in vector)
+                {
+                    tabelaHash.Inserir(valor);
+                    pilha.II(valor);
+                    item.Inserir(valor);
+                    fila.II(valor);
+                }
+                break;
+            case 4: vet = ManagerFileReader.Arquivo10000TXT(); vetor = ManagerFileReader.Arquivo10000TXT(); vector = ManagerFileReader.Arquivos10000TXT(); tabelaHash = new TabelaHash<string>(vector.Length); foreach (int valor in vetor)
+                {
+                    arvoreBinaria.Inserir(valor);
+                }
+                foreach (string valor in vector)
+                {
+                    tabelaHash.Inserir(valor);
+                    pilha.II(valor);
+                    item.Inserir(valor);
+                    fila.II(valor);
+                }
+                break;
+            case 5: vet = ManagerFileReader.Arquivo100000TXT(); vetor = ManagerFileReader.Arquivo100000TXT(); vector = ManagerFileReader.Arquivos100000TXT(); tabelaHash = new TabelaHash<string>(vector.Length); foreach (int valor in vetor)
+                {
+                    arvoreBinaria.Inserir(valor);
+                }
+                foreach (string valor in vector)
+                {
+                    tabelaHash.Inserir(valor);
+                    pilha.II(valor);
+                    item.Inserir(valor);
+                    fila.II(valor);
+                }
+                break;
+            case 6: vet = ManagerFileReader.Arquivo1000000TXT(); vetor = ManagerFileReader.Arquivo1000000TXT(); vector = ManagerFileReader.Arquivos1000000TXT(); tabelaHash = new TabelaHash<string>(vector.Length); foreach (int valor in vetor)
+                {
+                    arvoreBinaria.Inserir(valor);
+                }
+                foreach (string valor in vector)
+                {
+                    tabelaHash.Inserir(valor);
+                    pilha.II(valor);
+                    item.Inserir(valor);
+                    fila.II(valor);
+                }
+                break;
+            default: Main(args); break;
+        }
 
-        //BUBBLESORT
-        //Está certo
-        /*
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.BUBBLESORT);
+        Console.WriteLine("Qual você quer usar?\n 1.Bubble;\n 2.Selection;\n 3.Insertion;\n 4.Couting;\n 5.Shell;\n 6.Quick;\n 7.Merge;");
+        escolha = int.Parse(Console.ReadLine());
 
-        ManagerFileSorting.Ordenar(Sorting.enums.Sortings.BUBBLESORT, vet);
+        switch (escolha)
+        {
 
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.BUBBLESORT);
-        */
-        
-        // Crie um menu que solicite ao usuário qual é o arquivo que será lido e qual algoritmo deverá ser executado
+            //BUBBLESORT
+            //Está certo
+            case 1:
+                PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.BUBBLESORT);
 
-        //Segure ctrl em cima do ordenar para ir direto para a pagina de ordenação e adicionar o SELECTIONSORT para comçar a ser chamado
+                ManagerFileSorting.Ordenar(Sorting.enums.Sortings.BUBBLESORT, vet);
 
-        //SELECTIONSORT
-        //Está funcionando
-        /*
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.SELECTIONSORT);
+                PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.BUBBLESORT);
+                break;
 
-        ManagerFileSorting.Ordenar(Sorting.enums.Sortings.SELECTIONSORT, vet);
+            // Crie um menu que solicite ao usuário qual é o arquivo que será lido e qual algoritmo deverá ser executado
 
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.SELECTIONSORT);
-         */
-        //INSERTIONSORT
-        //Está funcionando
-        /*
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.INSERTIONSORT);
+            //Segure ctrl em cima do ordenar para ir direto para a pagina de ordenação e adicionar o SELECTIONSORT para comçar a ser chamado
 
-        ManagerFileSorting.Ordenar(Sorting.enums.Sortings.INSERTIONSORT, vet);
+            //SELECTIONSORT
+            //Está funcionando
+            case 2:
+                PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.SELECTIONSORT);
 
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.INSERTIONSORT);
-        */
-        //COUNTINGSORT
-        //Está funcionando
-        
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.COUNTINGSORT);
+                ManagerFileSorting.Ordenar(Sorting.enums.Sortings.SELECTIONSORT, vet);
 
-        ManagerFileSorting.Ordenar(Sorting.enums.Sortings.COUNTINGSORT, vet);
-        
+                PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.SELECTIONSORT);
+                break;
+            //INSERTIONSORT
+            //Está funcionando
+            case 3:
+                PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.INSERTIONSORT);
 
-        //Pesquisar qual é o atributo no código utils/UtilCountingTime.cs que vai falar qual é o tempo de execução do código*/
+                ManagerFileSorting.Ordenar(Sorting.enums.Sortings.INSERTIONSORT, vet);
 
-        //Fazer os códigos a partir da pagina 89 do segundo link do topo
+                PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.INSERTIONSORT);
+                break;
+            //COUNTINGSORT
+            //Está funcionando
+            case 4:
+                PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.COUNTINGSORT);
 
-        //SHELLSORT
-        //Tudo certo
-        /*
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.SHELLSORT);
+                ManagerFileSorting.Ordenar(Sorting.enums.Sortings.COUNTINGSORT, vet);
+                break;
+            //SHELLSORT
+            //Tudo certo
+            case 5:
+                PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.SHELLSORT);
 
-        ManagerFileSorting.Ordenar(Sorting.enums.Sortings.SHELLSORT, vet);
+                ManagerFileSorting.Ordenar(Sorting.enums.Sortings.SHELLSORT, vet);
 
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.SHELLSORT);
-        */
-        //QuickSORT
-        //Está certo
-        /*
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.QUICKSORT);
+                PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.SHELLSORT);
+                break;
+            //QuickSORT
+            //Está certo
+            case 6:
+                PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.QUICKSORT);
 
-        ManagerFileSorting.Ordenar(Sorting.enums.Sortings.QUICKSORT, vet);
+                ManagerFileSorting.Ordenar(Sorting.enums.Sortings.QUICKSORT, vet);
 
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.QUICKSORT);
-        */
-        //Merge
-        //Está certo
-        /*
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.MERGESORT);
+                PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.QUICKSORT);
+                break;
+            //Merge
+            //Está certo
+            case 7:
+                PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.MERGESORT);
 
-        ManagerFileSorting.Ordenar(Sorting.enums.Sortings.MERGESORT, vet);
+                ManagerFileSorting.Ordenar(Sorting.enums.Sortings.MERGESORT, vet);
 
-        PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.MERGESORT);
-        */
+                PrintSolutionStatic.ImprimirArrayMesmaLinha(vet, Sorting.enums.Sortings.MERGESORT);
+                break;
+            default: Main(args); break;
+        }
         //Radix não precisa fazer
 
-        //Na primeira questão do slide é para considerar o tempo de execução
+        Console.WriteLine("A partir daqui é a Árvore Binária:");
+
+        arvoreBinaria.Mostrar();
+        Console.WriteLine();
+
+        Console.WriteLine("A partir daqui é a Tabela Hash");
+
+        tabelaHash.Mostrar();
+        Console.WriteLine();
+
+        Console.WriteLine("Pilha:");
+
+        item.Mostrar();
+        Console.WriteLine();
+
+        Console.WriteLine("Lista:");
+
+        item.Mostrar();
+        Console.WriteLine();
+
+        Console.WriteLine("Fila");
+
+        fila.Mostrar();
     }
 
     public class Nodo<T> where T : IComparable<T>
@@ -257,6 +358,139 @@ public class Program
             }
 
             return aux;
+        }
+    }
+
+    public class NodoH<T>
+    {
+        public T valor;
+        public bool utilizado;
+
+        public NodoH(T valor)
+        {
+            this.valor = valor;
+            utilizado = true;
+        }
+    }
+
+    public class TabelaHash<T>
+    {
+        public NodoH<T>[] tabela;
+
+        public TabelaHash(int tamanho)
+        {
+            this.tabela = new NodoH<T>[tamanho];
+        }
+
+        private int funcaoHash(T valor)
+        {
+            int indice = 0;
+            string valorString = valor.ToString();
+
+            for(int i = 0; i < valorString.Length; i++)
+            {
+                indice += (int)valorString[i] * i;
+            }
+
+            indice = indice % tabela.Length;
+
+            return indice;
+        }
+
+        public void Inserir(T valor)
+        {
+            int indice = funcaoHash(valor);
+            int count = 0;
+
+            while(count < tabela.Length)
+            {
+                if (tabela[indice] == null)
+                {
+                    tabela[indice] = new NodoH<T>(valor);
+                    break;
+                }
+                else if (tabela[indice].utilizado == false)
+                {
+                    tabela[indice].valor = valor;
+                    tabela[indice].utilizado = true;
+                    break;
+                }
+                else
+                {
+                    indice = (indice + 1) % tabela.Length;
+                    count++;
+                }
+            }
+
+            if(count == tabela.Length)
+            {
+                throw new Exception("Não é possível inserir tabela cheia");
+            }
+        }
+
+        public void Mostrar()
+        {
+            for(int i = 0; i < tabela.Length; i++)
+            {
+                if (tabela[i] != null && tabela[i].utilizado == true)
+                {
+                    Console.WriteLine($"[{i}] --> {tabela[i].valor.ToString()}");
+                }
+            }
+        }
+
+        public bool Pesquisar(T valor)
+        {
+            int indice = funcaoHash(valor);
+            int count = 0;
+
+            while(count < tabela.Length)
+            {
+                if (tabela[indice] == null)
+                {
+                    return false;
+                }
+                else if (tabela[indice] != null && tabela[indice].utilizado == true && Equals(tabela[indice].valor, valor))
+                {
+                    return true;
+                }
+                else
+                {
+                    indice = (indice + 1) % tabela.Length;
+                    count++;
+                }
+            }
+
+            return false;
+        }
+
+        public void Remover(T valor)
+        {
+            int indice = funcaoHash(valor);
+            int count = 0;
+
+            while(count < tabela.Length)
+            {
+                if (tabela[indice] == null)
+                {
+                    throw new Exception("Não foi possível remover: Elemento não existe");
+                }
+                else if (tabela[indice] != null && tabela[indice].utilizado == true && Equals(tabela[indice].valor, valor))
+                {
+                    tabela[indice].utilizado = false;
+                    break;
+                }
+                else
+                {
+                    indice = (indice + 1) % tabela.Length;
+                    count++;
+                }
+            }
+
+            if(count == tabela.Length)
+            {
+                throw new Exception("Não foi possível remover: Elemento não existe");
+            }
         }
     }
 }

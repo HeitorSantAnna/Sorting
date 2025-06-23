@@ -7,7 +7,6 @@ namespace Sorting.sorting.simple
         public static int[] Sorting(int[] vet)
         {
             int n = vet.Length;
-            long quantidade = 0;
 
             for (int i = 0; i < n; i++)
             {
@@ -19,12 +18,9 @@ namespace Sorting.sorting.simple
                         int tmp = vet[j];
                         vet[j] = vet[j - 1];
                         vet[j - 1] = tmp;
-                        quantidade++;
                     }
                 }
             }
-
-            Console.WriteLine($"Chamadas: {quantidade}");
 
             return vet;
         }
